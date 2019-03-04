@@ -15,10 +15,6 @@ public class Supplier {
     @Column(name = "id")
     private Long id;
 
-	@OneToOne
-	@JoinColumn(name = "supplier_id", referencedColumnName = "id")
-	private String supplierId;
-
     private String supplierName;
 
     public Long getId() {
