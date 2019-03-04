@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name="tb_productinventory")
+@Table(name="tb_financialindicator")
 public class FinancialIndicator {
 
 
