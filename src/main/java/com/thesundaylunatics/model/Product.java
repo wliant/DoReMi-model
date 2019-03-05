@@ -1,11 +1,6 @@
 package com.thesundaylunatics.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="tb_product")
@@ -17,10 +12,43 @@ public class Product {
     private String productCategory;
     private String productTitle;
     private String productAuthor;
-    private String yearOfPublication;
+    private int yearOfPublication;
     private String publisher;
-    
+    private String imageUrl;
+    private int availableInventory;
     private double unitPrice;
+
+	@OneToOne
+	@JoinColumn(name = "supplier_id",referencedColumnName = "id")
+	private Supplier supplier;
+
+	public void setYearOfPublication(int yearOfPublication) {
+		this.yearOfPublication = yearOfPublication;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public int getAvailableInventory() {
+		return availableInventory;
+	}
+
+	public void setAvailableInventory(int availableInventory) {
+		this.availableInventory = availableInventory;
+	}
+
+	public Supplier getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
+	}
 
 	public Long getId() {
 		return id;
@@ -54,12 +82,24 @@ public class Product {
 		this.productAuthor = productAuthor;
 	}
 
-	public String getYearOfPublication() {
-		return yearOfPublication;
+	@Override
+	public String toString() {
+		return "Product{" +
+				"id=" + id +
+				", productCategory='" + productCategory + '\'' +
+				", productTitle='" + productTitle + '\'' +
+				", productAuthor='" + productAuthor + '\'' +
+				", yearOfPublication=" + yearOfPublication +
+				", publisher='" + publisher + '\'' +
+				", imageUrl='" + imageUrl + '\'' +
+				", availableInventory=" + availableInventory +
+				", unitPrice=" + unitPrice +
+				", supplier=" + supplier +
+				'}';
 	}
 
-	public void setYearOfPublication(String yearOfPublication) {
-		this.yearOfPublication = yearOfPublication;
+	public int getYearOfPublication() {
+		return yearOfPublication;
 	}
 
 	public String getPublisher() {
