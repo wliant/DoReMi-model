@@ -9,8 +9,6 @@ import java.math.BigDecimal;
 @Table(name="tb_financialindicator")
 public class FinancialIndicator {
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

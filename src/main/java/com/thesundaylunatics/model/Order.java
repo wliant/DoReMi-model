@@ -1,5 +1,6 @@
 package com.thesundaylunatics.model;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Date;
 
@@ -31,8 +32,50 @@ public class Order {
     
     private String country;
     private String status;
-    
-    @OneToMany(
+    private BigDecimal orderValue;
+    private boolean isApproved;
+    private BigDecimal orderDiscount;
+
+	@Override
+	public String toString() {
+		return "Order{" +
+				"id=" + id +
+				", orderDate=" + orderDate +
+				", customer=" + customer +
+				", country='" + country + '\'' +
+				", status='" + status + '\'' +
+				", orderValue=" + orderValue +
+				", isApproved=" + isApproved +
+				", orderDiscount=" + orderDiscount +
+				", orderItems=" + orderItems +
+				'}';
+	}
+
+	public BigDecimal getOrderValue() {
+		return orderValue;
+	}
+
+	public void setOrderValue(BigDecimal orderValue) {
+		this.orderValue = orderValue;
+	}
+
+	public boolean isApproved() {
+		return isApproved;
+	}
+
+	public void setApproved(boolean approved) {
+		isApproved = approved;
+	}
+
+	public BigDecimal getOrderDiscount() {
+		return orderDiscount;
+	}
+
+	public void setOrderDiscount(BigDecimal orderDiscount) {
+		this.orderDiscount = orderDiscount;
+	}
+
+	@OneToMany(
             cascade = CascadeType.ALL,
             mappedBy = "order",
             orphanRemoval = true
