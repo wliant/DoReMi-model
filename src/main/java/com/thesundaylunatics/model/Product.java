@@ -16,7 +16,7 @@ public class Product {
     private String publisher;
     private String imageUrl;
     private int availableInventory;
-    private double unitPrice;
+    private Double unitPrice;
 
 	@OneToOne
 	@JoinColumn(name = "supplier_id",referencedColumnName = "id")
@@ -110,11 +110,11 @@ public class Product {
 		this.publisher = publisher;
 	}
 
-	public double getUnitPrice() {
+	public Double getUnitPrice() {
 		return unitPrice;
 	}
 
-	public void setUnitPrice(double unitPrice) {
+	public void setUnitPrice(Double unitPrice) {
 		this.unitPrice = unitPrice;
 	}
 }

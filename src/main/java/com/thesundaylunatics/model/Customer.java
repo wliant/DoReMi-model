@@ -16,21 +16,15 @@ public class Customer {
 	private String creditRisk;
 	private String name;
 	private String address;
-
-	@OneToOne
-	@JoinColumn(name = "order_id", referencedColumnName = "id")
-	private Order order;
-
 	private Date dateRegistered;
 	private boolean latePayment;
 	private boolean defaulter;
 	private boolean isNew;
 	private int yearsActive;
-	private double ltv;
+	private Double ltv;
 	private String frequencyOfPurchase;
 
-	@OneToOne
-	@JoinColumn(name = "financialIndicator_id", referencedColumnName = "id")
+	@ManyToOne(cascade = {CascadeType.ALL }, fetch = FetchType.EAGER)
 	private FinancialIndicator financialIndicator;
 
     public Long getId() {
@@ -73,7 +67,6 @@ public class Customer {
 				", creditRisk='" + creditRisk + '\'' +
 				", name='" + name + '\'' +
 				", address='" + address + '\'' +
-				", order=" + order +
 				", dateRegistered=" + dateRegistered +
 				", latePayment=" + latePayment +
 				", defaulter=" + defaulter +
@@ -101,14 +94,6 @@ public class Customer {
 		this.creditRisk = creditRisk;
 	}
 
-	public Order getOrder() {
-		return order;
-	}
-
-	public void setOrder(Order order) {
-		this.order = order;
-	}
-
 	public boolean isDefaulter() {
 		return defaulter;
 	}
@@ -133,11 +118,11 @@ public class Customer {
 		this.yearsActive = yearsActive;
 	}
 
-	public double getLtv() {
+	public Double getLtv() {
 		return ltv;
 	}
 
-	public void setLtv(double ltv) {
+	public void setLtv(Double ltv) {
 		this.ltv = ltv;
 	}
 

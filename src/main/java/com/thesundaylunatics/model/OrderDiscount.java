@@ -1,7 +1,6 @@
 package com.thesundaylunatics.model;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Entity
 @Table(name="tb_orderdiscount")
@@ -20,7 +19,7 @@ public class OrderDiscount {
     @JoinColumn(name="order_id", referencedColumnName = "id")
     private Order order;
 
-	private BigDecimal orderDiscount;
+	private Double orderDiscount;
 
     @Override
     public String toString() {
@@ -56,11 +55,11 @@ public class OrderDiscount {
         this.order = order;
     }
 
-    public BigDecimal getOrderDiscount() {
+    public Double getOrderDiscount() {
         return orderDiscount;
     }
 
-    public void setOrderDiscount(BigDecimal orderDiscount) {
+    public void setOrderDiscount(Double orderDiscount) {
         this.orderDiscount = orderDiscount;
     }
 }

@@ -20,7 +20,7 @@ public class Campaign {
     String campaignType;
     String productCategory;
     String productTitle;
-    double discount;
+    Double discount;
     Date campaignStart;
     Date campaignEnd;
 	public Long getId() {
@@ -47,10 +47,10 @@ public class Campaign {
 	public void setProductTitle(String productTitle) {
 		this.productTitle = productTitle;
 	}
-	public double getDiscount() {
+	public Double getDiscount() {
 		return discount;
 	}
-	public void setDiscount(double discount) {
+	public void setDiscount(Double discount) {
 		this.discount = discount;
 	}
 	public Date getCampaignStart() {

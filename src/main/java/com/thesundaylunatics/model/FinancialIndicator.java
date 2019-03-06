@@ -1,9 +1,6 @@
 package com.thesundaylunatics.model;
 
-import org.joda.time.DateTime;
-
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Entity
 @Table(name="tb_financialindicator")
@@ -13,10 +10,6 @@ public class FinancialIndicator {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-
-	@OneToOne
-	@JoinColumn(name = "customer_id", referencedColumnName = "id")
-	private Customer customer;
 
 	private boolean isNew;
 	private String creditRisk;
@@ -34,17 +27,26 @@ public class FinancialIndicator {
 	private String npm;
 	private String roc;
 
-	private BigDecimal totalLoans;
-	private BigDecimal totalDeposits;
-	private BigDecimal securities;
-	private BigDecimal netSales;
-	private BigDecimal tootalAssets;
+	private Double totalLoans;
+	private Double totalDeposits;
+	private Double securities;
+	private Double netSales;
+	private Double tootalAssets;
+    private Double cashAndCashEquivalents;
+	private Double inventories;
+	private Double currentLiabilities;
+	private Double currentAssets;
+	private Double totalRevenue;
+	private Double netProfit;
+	private Double totalEquity;
+	private Double totalDebt;
+	private Double devidends;
+	private Double netIncome;
 
     @Override
     public String toString() {
         return "FinancialIndicator{" +
                 "id=" + id +
-                ", customer=" + customer +
                 ", isNew=" + isNew +
                 ", creditRisk='" + creditRisk + '\'' +
                 ", liquidity='" + liquidity + '\'' +
@@ -84,14 +86,6 @@ public class FinancialIndicator {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 
     public boolean isNew() {
@@ -214,136 +208,124 @@ public class FinancialIndicator {
         this.roc = roc;
     }
 
-    public BigDecimal getTotalLoans() {
+    public Double getTotalLoans() {
         return totalLoans;
     }
 
-    public void setTotalLoans(BigDecimal totalLoans) {
+    public void setTotalLoans(Double totalLoans) {
         this.totalLoans = totalLoans;
     }
 
-    public BigDecimal getTotalDeposits() {
+    public Double getTotalDeposits() {
         return totalDeposits;
     }
 
-    public void setTotalDeposits(BigDecimal totalDeposits) {
+    public void setTotalDeposits(Double totalDeposits) {
         this.totalDeposits = totalDeposits;
     }
 
-    public BigDecimal getSecurities() {
+    public Double getSecurities() {
         return securities;
     }
 
-    public void setSecurities(BigDecimal securities) {
+    public void setSecurities(Double securities) {
         this.securities = securities;
     }
 
-    public BigDecimal getNetSales() {
+    public Double getNetSales() {
         return netSales;
     }
 
-    public void setNetSales(BigDecimal netSales) {
+    public void setNetSales(Double netSales) {
         this.netSales = netSales;
     }
 
-    public BigDecimal getTootalAssets() {
+    public Double getTootalAssets() {
         return tootalAssets;
     }
 
-    public void setTootalAssets(BigDecimal tootalAssets) {
+    public void setTootalAssets(Double tootalAssets) {
         this.tootalAssets = tootalAssets;
     }
 
-    public BigDecimal getCashAndCashEquivalents() {
+    public Double getCashAndCashEquivalents() {
         return cashAndCashEquivalents;
     }
 
-    public void setCashAndCashEquivalents(BigDecimal cashAndCashEquivalents) {
+    public void setCashAndCashEquivalents(Double cashAndCashEquivalents) {
         this.cashAndCashEquivalents = cashAndCashEquivalents;
     }
 
-    public BigDecimal getInventories() {
+    public Double getInventories() {
         return inventories;
     }
 
-    public void setInventories(BigDecimal inventories) {
+    public void setInventories(Double inventories) {
         this.inventories = inventories;
     }
 
-    public BigDecimal getCurrentLiabilities() {
+    public Double getCurrentLiabilities() {
         return currentLiabilities;
     }
 
-    public void setCurrentLiabilities(BigDecimal currentLiabilities) {
+    public void setCurrentLiabilities(Double currentLiabilities) {
         this.currentLiabilities = currentLiabilities;
     }
 
-    public BigDecimal getCurrentAssets() {
+    public Double getCurrentAssets() {
         return currentAssets;
     }
 
-    public void setCurrentAssets(BigDecimal currentAssets) {
+    public void setCurrentAssets(Double currentAssets) {
         this.currentAssets = currentAssets;
     }
 
-    public BigDecimal getTotalRevenue() {
+    public Double getTotalRevenue() {
         return totalRevenue;
     }
 
-    public void setTotalRevenue(BigDecimal totalRevenue) {
+    public void setTotalRevenue(Double totalRevenue) {
         this.totalRevenue = totalRevenue;
     }
 
-    public BigDecimal getNetProfit() {
+    public Double getNetProfit() {
         return netProfit;
     }
 
-    public void setNetProfit(BigDecimal netProfit) {
+    public void setNetProfit(Double netProfit) {
         this.netProfit = netProfit;
     }
 
-    public BigDecimal getTotalEquity() {
+    public Double getTotalEquity() {
         return totalEquity;
     }
 
-    public void setTotalEquity(BigDecimal totalEquity) {
+    public void setTotalEquity(Double totalEquity) {
         this.totalEquity = totalEquity;
     }
 
-    public BigDecimal getTotalDebt() {
+    public Double getTotalDebt() {
         return totalDebt;
     }
 
-    public void setTotalDebt(BigDecimal totalDebt) {
+    public void setTotalDebt(Double totalDebt) {
         this.totalDebt = totalDebt;
     }
 
-    public BigDecimal getDevidends() {
+    public Double getDevidends() {
         return devidends;
     }
 
-    public void setDevidends(BigDecimal devidends) {
+    public void setDevidends(Double devidends) {
         this.devidends = devidends;
     }
 
-    public BigDecimal getNetIncome() {
+    public Double getNetIncome() {
         return netIncome;
     }
 
-    public void setNetIncome(BigDecimal netIncome) {
+    public void setNetIncome(Double netIncome) {
         this.netIncome = netIncome;
     }
-
-    private BigDecimal cashAndCashEquivalents;
-	private BigDecimal inventories;
-	private BigDecimal currentLiabilities;
-	private BigDecimal currentAssets;
-	private BigDecimal totalRevenue;
-	private BigDecimal netProfit;
-	private BigDecimal totalEquity;
-	private BigDecimal totalDebt;
-	private BigDecimal devidends;
-	private BigDecimal netIncome;
-
 
 }

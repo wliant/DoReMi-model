@@ -1,10 +1,6 @@
 package com.thesundaylunatics.model;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
-
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name="tb_supplier")

@@ -1,9 +1,8 @@
 package com.thesundaylunatics.model;
 
-import org.joda.time.DateTime;
+import java.util.Date;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Entity
 @Table(name="tb_productinventoryy")
@@ -23,7 +22,7 @@ public class ProductInventory {
 	private String supplierLeadTime;
 	private String stockLevel;
 	private String inventoryDecision;
-	private DateTime lastModified;
+	private Date lastModified;
 
     @Override
     public String toString() {
@@ -95,11 +94,11 @@ public class ProductInventory {
         this.inventoryDecision = inventoryDecision;
     }
 
-    public DateTime getLastModified() {
+    public Date getLastModified() {
         return lastModified;
     }
 
-    public void setLastModified(DateTime lastModified) {
+    public void setLastModified(Date lastModified) {
         this.lastModified = lastModified;
     }
 }

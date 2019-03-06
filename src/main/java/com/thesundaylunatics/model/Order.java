@@ -1,6 +1,5 @@
 package com.thesundaylunatics.model;
 
-import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Date;
 
@@ -23,10 +22,17 @@ public class Order {
     
     private String country;
     private String status;
-    private BigDecimal orderValue;
+    private Double orderValue;
     private boolean isApproved;
-    private BigDecimal orderDiscount;
-
+    private Double orderDiscount;
+    
+	@OneToMany(
+			fetch=FetchType.EAGER,
+			cascade = CascadeType.ALL,
+            orphanRemoval = true
+        )
+    private Collection<OrderLineItem> orderItems;
+	
 	@Override
 	public String toString() {
 		return "Order{" +
@@ -42,11 +48,11 @@ public class Order {
 				'}';
 	}
 
-	public BigDecimal getOrderValue() {
+	public Double getOrderValue() {
 		return orderValue;
 	}
 
-	public void setOrderValue(BigDecimal orderValue) {
+	public void setOrderValue(Double orderValue) {
 		this.orderValue = orderValue;
 	}
 
@@ -58,20 +64,13 @@ public class Order {
 		isApproved = approved;
 	}
 
-	public BigDecimal getOrderDiscount() {
+	public Double getOrderDiscount() {
 		return orderDiscount;
 	}
 
-	public void setOrderDiscount(BigDecimal orderDiscount) {
+	public void setOrderDiscount(Double orderDiscount) {
 		this.orderDiscount = orderDiscount;
 	}
-
-	@OneToMany(
-			fetch=FetchType.LAZY,
-			cascade = CascadeType.ALL,
-            orphanRemoval = true
-        )
-    private Collection<OrderLineItem> orderItems;
 
 	public Long getId() {
 		return id;
