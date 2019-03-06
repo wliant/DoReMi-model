@@ -67,9 +67,8 @@ public class Order {
 	}
 
 	@OneToMany(
-			fetch = FetchType.EAGER,
+			fetch=FetchType.LAZY,
 			cascade = CascadeType.ALL,
-            mappedBy = "order",
             orphanRemoval = true
         )
     private Collection<OrderLineItem> orderItems;

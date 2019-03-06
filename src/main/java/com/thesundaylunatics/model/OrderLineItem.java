@@ -1,14 +1,6 @@
 package com.thesundaylunatics.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -24,10 +16,6 @@ public class OrderLineItem {
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;
     
-    @ManyToOne
-    @JoinColumn(name = "order_fk", referencedColumnName = "id")
-    private Order order;
-    
     private int quantity;
     private double value;
     private String discription;
@@ -38,7 +26,6 @@ public class OrderLineItem {
 		return "OrderLineItem{" +
 				"id=" + id +
 				", product=" + product +
-				", order=" + order +
 				", quantity=" + quantity +
 				", value=" + value +
 				", discription='" + discription + '\'' +
@@ -88,14 +75,6 @@ public class OrderLineItem {
 
 	public void setProduct(Product product) {
 		this.product = product;
-	}
-
-	public Order getOrder() {
-		return order;
-	}
-
-	public void setOrder(Order order) {
-		this.order = order;
 	}
 
 	public int getQuantity() {
