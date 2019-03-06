@@ -25,7 +25,7 @@ public class OrderLineItem {
     private Product product;
     
     @ManyToOne
-    @JoinColumn(name = "order_fk")
+    @JoinColumn(name = "order_fk", referencedColumnName = "id")
     private Order order;
     
     private int quantity;
