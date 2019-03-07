@@ -11,15 +11,15 @@ public class OrderLineItem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-    
+
     @OneToOne
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;
-    
+
     private int quantity;
     private double value;
     private String discription;
-    private double lineItermDiscount;
+    private double lineItemDiscount;
 
 	@Override
 	public String toString() {
@@ -29,7 +29,7 @@ public class OrderLineItem {
 				", quantity=" + quantity +
 				", value=" + value +
 				", discription='" + discription + '\'' +
-				", lineItermDiscount=" + lineItermDiscount +
+				", lineItemDiscount=" + lineItemDiscount +
 				", lineItermValue=" + lineItermValue +
 				'}';
 	}
@@ -42,12 +42,12 @@ public class OrderLineItem {
 		this.discription = discription;
 	}
 
-	public double getLineItermDiscount() {
-		return lineItermDiscount;
+	public double getLineItemDiscount() {
+		return lineItemDiscount;
 	}
 
-	public void setLineItermDiscount(double lineItermDiscount) {
-		this.lineItermDiscount = lineItermDiscount;
+	public void setLineItemDiscount(double lineItemDiscount) {
+		this.lineItemDiscount = lineItemDiscount;
 	}
 
 	public BigDecimal getLineItermValue() {
