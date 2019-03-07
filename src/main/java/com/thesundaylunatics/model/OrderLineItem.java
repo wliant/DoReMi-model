@@ -18,8 +18,6 @@ public class OrderLineItem {
 
     private int quantity;
     private double value;
-    private String discription;
-    private double lineItemDiscount;
 
 	@Override
 	public String toString() {
@@ -28,26 +26,8 @@ public class OrderLineItem {
 				", product=" + product +
 				", quantity=" + quantity +
 				", value=" + value +
-				", discription='" + discription + '\'' +
-				", lineItemDiscount=" + lineItemDiscount +
 				", lineItermValue=" + lineItermValue +
 				'}';
-	}
-
-	public String getDiscription() {
-		return discription;
-	}
-
-	public void setDiscription(String discription) {
-		this.discription = discription;
-	}
-
-	public double getLineItemDiscount() {
-		return lineItemDiscount;
-	}
-
-	public void setLineItemDiscount(double lineItemDiscount) {
-		this.lineItemDiscount = lineItemDiscount;
 	}
 
 	public BigDecimal getLineItermValue() {

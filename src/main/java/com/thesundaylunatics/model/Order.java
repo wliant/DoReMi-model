@@ -23,8 +23,8 @@ public class Order {
     private String country;
     private String status;
     private Double orderValue;
-    private boolean isApproved;
     private Double orderDiscount;
+    private Double discountedValue;
     
 	@OneToMany(
 			fetch=FetchType.EAGER,
@@ -42,7 +42,6 @@ public class Order {
 				", country='" + country + '\'' +
 				", status='" + status + '\'' +
 				", orderValue=" + orderValue +
-				", isApproved=" + isApproved +
 				", orderDiscount=" + orderDiscount +
 				", orderItems=" + orderItems +
 				'}';
@@ -54,14 +53,6 @@ public class Order {
 
 	public void setOrderValue(Double orderValue) {
 		this.orderValue = orderValue;
-	}
-
-	public boolean isApproved() {
-		return isApproved;
-	}
-
-	public void setApproved(boolean approved) {
-		isApproved = approved;
 	}
 
 	public Double getOrderDiscount() {
@@ -118,5 +109,13 @@ public class Order {
 
 	public void setOrderItems(Collection<OrderLineItem> orderItems) {
 		this.orderItems = orderItems;
+	}
+
+	public Double getDiscountedValue() {
+		return discountedValue;
+	}
+
+	public void setDiscountedValue(Double discountedValue) {
+		this.discountedValue = discountedValue;
 	}
 }

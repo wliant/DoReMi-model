@@ -14,21 +14,18 @@ public class Product {
     private String productAuthor;
     private int yearOfPublication;
     private String publisher;
-    private String imageUrl;
     private int availableInventory;
     private Double unitPrice;
+    
+	private String productDemand;
+	private String serviceLevel;
+	private String supplierLeadTime;
+	private String stockLevel;
 
 	public void setYearOfPublication(int yearOfPublication) {
 		this.yearOfPublication = yearOfPublication;
 	}
 
-	public String getImageUrl() {
-		return imageUrl;
-	}
-
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
 
 	public int getAvailableInventory() {
 		return availableInventory;
@@ -79,7 +76,6 @@ public class Product {
 				", productAuthor='" + productAuthor + '\'' +
 				", yearOfPublication=" + yearOfPublication +
 				", publisher='" + publisher + '\'' +
-				", imageUrl='" + imageUrl + '\'' +
 				", availableInventory=" + availableInventory +
 				", unitPrice=" + unitPrice +
 				'}';
@@ -103,5 +99,45 @@ public class Product {
 
 	public void setUnitPrice(Double unitPrice) {
 		this.unitPrice = unitPrice;
+	}
+
+
+	public String getProductDemand() {
+		return productDemand;
+	}
+
+
+	public void setProductDemand(String productDemand) {
+		this.productDemand = productDemand;
+	}
+
+
+	public String getServiceLevel() {
+		return serviceLevel;
+	}
+
+
+	public void setServiceLevel(String serviceLevel) {
+		this.serviceLevel = serviceLevel;
+	}
+
+
+	public String getSupplierLeadTime() {
+		return supplierLeadTime;
+	}
+
+
+	public void setSupplierLeadTime(String supplierLeadTime) {
+		this.supplierLeadTime = supplierLeadTime;
+	}
+
+
+	public String getStockLevel() {
+		return stockLevel;
+	}
+
+
+	public void setStockLevel(String stockLevel) {
+		this.stockLevel = stockLevel;
 	}
 }
