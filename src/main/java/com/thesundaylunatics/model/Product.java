@@ -18,10 +18,6 @@ public class Product {
     private int availableInventory;
     private Double unitPrice;
 
-	@OneToOne
-	@JoinColumn(name = "supplier_id",referencedColumnName = "id")
-	private Supplier supplier;
-
 	public void setYearOfPublication(int yearOfPublication) {
 		this.yearOfPublication = yearOfPublication;
 	}
@@ -40,14 +36,6 @@ public class Product {
 
 	public void setAvailableInventory(int availableInventory) {
 		this.availableInventory = availableInventory;
-	}
-
-	public Supplier getSupplier() {
-		return supplier;
-	}
-
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
 	}
 
 	public Long getId() {
@@ -94,7 +82,6 @@ public class Product {
 				", imageUrl='" + imageUrl + '\'' +
 				", availableInventory=" + availableInventory +
 				", unitPrice=" + unitPrice +
-				", supplier=" + supplier +
 				'}';
 	}
 
