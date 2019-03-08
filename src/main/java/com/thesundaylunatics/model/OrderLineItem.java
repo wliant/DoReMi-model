@@ -1,7 +1,6 @@
 package com.thesundaylunatics.model;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Entity
 @Table(name="tb_orderlineitem")
@@ -26,20 +25,8 @@ public class OrderLineItem {
 				", product=" + product +
 				", quantity=" + quantity +
 				", value=" + value +
-				", lineItermValue=" + lineItermValue +
 				'}';
 	}
-
-	public BigDecimal getLineItermValue() {
-		return lineItermValue;
-	}
-
-	public void setLineItermValue(BigDecimal lineItermValue) {
-		this.lineItermValue = lineItermValue;
-	}
-
-	private BigDecimal lineItermValue;
-
 
 	public Long getId() {
 		return id;
