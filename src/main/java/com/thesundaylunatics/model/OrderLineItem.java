@@ -11,7 +11,7 @@ public class OrderLineItem {
     @Column(name = "id")
     private Long id;
 
-    @OneToOne
+    @OneToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;
 
