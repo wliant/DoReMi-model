@@ -1,9 +1,11 @@
 package com.thesundaylunatics.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name="tb_product")
+@XmlRootElement
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

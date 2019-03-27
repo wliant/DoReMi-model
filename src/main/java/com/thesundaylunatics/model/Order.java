@@ -4,9 +4,11 @@ import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name="tb_order")
+@XmlRootElement
 public class Order {
 
 	

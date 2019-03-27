@@ -1,9 +1,11 @@
 package com.thesundaylunatics.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name="tb_orderlineitem")
+@XmlRootElement
 public class OrderLineItem {
 
     @Id

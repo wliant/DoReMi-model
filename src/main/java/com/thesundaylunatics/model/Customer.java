@@ -3,9 +3,11 @@ package com.thesundaylunatics.model;
 import java.util.Date;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name="tb_customer")
+@XmlRootElement
 public class Customer {
 	
     @Id
